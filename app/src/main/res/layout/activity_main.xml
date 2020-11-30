@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050514"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:text="@string/text"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.624" />
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C51162"
+        android:text="@string/start_button"
+        android:textColor="#FFEBEE"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="600dp"
+        android:drawableStart="@drawable/start_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/blue_button"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="7dp"
+        android:backgroundTint="#0091EA"
+        app:layout_constraintStart_toEndOf="@+id/green_button"
+        app:layout_constraintTop_toTopOf="@+id/green_button" />
+
+    <Button
+        android:id="@+id/green_button"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="#00C853"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/yellow_button"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="7dp"
+        android:backgroundTint="#FFD600"
+        app:layout_constraintStart_toStartOf="@+id/green_button"
+        app:layout_constraintTop_toBottomOf="@+id/green_button" />
+
+    <Button
+        android:id="@+id/red_button"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:backgroundTint="#D50000"
+        app:layout_constraintEnd_toEndOf="@+id/blue_button"
+        app:layout_constraintTop_toTopOf="@+id/yellow_button" />
+
+    <Button
+        android:id="@+id/check_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:drawableStart="@drawable/check_icon"
+        android:backgroundTint="#C51162"
+        android:text="@string/check_button"
+        android:textColor="#FFEBEE"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/start_button"
+        app:layout_constraintTop_toTopOf="@+id/start_button" />
+
+</android.support.constraint.ConstraintLayout>
