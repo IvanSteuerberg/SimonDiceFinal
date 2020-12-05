@@ -3,6 +3,7 @@ package com.example.simondicefinal
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
@@ -27,10 +28,13 @@ class MainActivity : AppCompatActivity() {
 
         val toastStart = Toast.makeText(applicationContext,R.string.start, Toast.LENGTH_SHORT)
         val toastFinish = Toast.makeText(applicationContext,R.string.finish, Toast.LENGTH_SHORT)
+        var score = findViewById<TextView>(R.id.infoText)
+        val text = getString(R.string.Text)
 
 
         miModelo.listaReto.observe(this, Observer{
             miModelo.mostrarSecuencia(listaBotones)
+            score.setText(text+" " + miModelo.listaReto.value!!.size.toString())
         })
 
         start.setOnClickListener{
@@ -43,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         check.setOnClickListener{
             if (!miModelo.compararSecuencia())
                toastFinish.show()
+               score.setText(text+" 0")
         }
 
         green.setOnClickListener{

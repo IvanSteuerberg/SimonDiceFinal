@@ -6,4 +6,6 @@
     <string name="check_button">Comprobar</string>
     <string name="start">Empieza el juego!</string>
     <string name="finish">Oh no, perdiste D:</string>
+    <string name="infoText">Puntuacion: </string>
+    <string name="Text">Puntuacion: </string>
 </resources>

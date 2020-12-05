@@ -5,4 +5,6 @@
     <string name="check_button">Check</string>
     <string name="start">Starts the game!</string>
     <string name="finish">You lost D:</string>
+    <string name="infoText">Score: </string>
+    <string name="Text">Score: </string>
 </resources>
