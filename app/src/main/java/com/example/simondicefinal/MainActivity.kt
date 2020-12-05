@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         val listaBotones = listOf(green,red,blue,yellow)
 
-        val toastSaludo = Toast.makeText(applicationContext,"Comienza el juego!", Toast.LENGTH_SHORT)
-        val toastFin = Toast.makeText(applicationContext,"Has perdido :(", Toast.LENGTH_SHORT)
+        val toastStart = Toast.makeText(applicationContext,R.string.start, Toast.LENGTH_SHORT)
+        val toastFinish = Toast.makeText(applicationContext,R.string.finish, Toast.LENGTH_SHORT)
 
 
         miModelo.listaReto.observe(this, Observer{
@@ -36,13 +36,13 @@ class MainActivity : AppCompatActivity() {
         start.setOnClickListener{
             miModelo.resetear()
             miModelo.añadirValor()
-            toastSaludo.show()
+            toastStart.show()
 
         }
 
         check.setOnClickListener{
             if (!miModelo.compararSecuencia())
-               toastFin.show()
+               toastFinish.show()
         }
 
         green.setOnClickListener{
