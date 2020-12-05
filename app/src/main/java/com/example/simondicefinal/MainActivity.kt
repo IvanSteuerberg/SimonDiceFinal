@@ -1,12 +1,12 @@
 package com.example.simondicefinal
 
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,18 +28,18 @@ class MainActivity : AppCompatActivity() {
 
         val toastStart = Toast.makeText(applicationContext,R.string.start, Toast.LENGTH_SHORT)
         val toastFinish = Toast.makeText(applicationContext,R.string.finish, Toast.LENGTH_SHORT)
-        var score = findViewById<TextView>(R.id.infoText)
+        val score = findViewById<TextView>(R.id.infoText)
         val text = getString(R.string.Text)
 
 
-        miModelo.listaReto.observe(this, Observer{
+        miModelo.listaReto.observe(this, {
             miModelo.mostrarSecuencia(listaBotones)
-            score.setText(text+" " + miModelo.listaReto.value!!.size.toString())
+            score.text = "$text ${miModelo.listaReto.value!!.size}"
         })
 
         start.setOnClickListener{
             miModelo.resetear()
-            miModelo.añadirValor()
+            miModelo.sumarValor()
             toastStart.show()
 
         }
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         check.setOnClickListener{
             if (!miModelo.compararSecuencia())
                toastFinish.show()
-               score.setText(text+" 0")
+            score.text = "$text 0"
         }
 
         green.setOnClickListener{

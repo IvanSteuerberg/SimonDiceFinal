@@ -25,7 +25,7 @@ class MyViewModel : ViewModel() {
         listaJugador.value = mutableListOf()
     }
 
-    fun añadirValor() {
+    fun sumarValor() {
         val numero = Random.nextInt(4) + 1
         listaReto.value?.add(numero)
         listaReto.postValue(listaReto.value)
@@ -49,13 +49,13 @@ class MyViewModel : ViewModel() {
         CoroutineScope(Dispatchers.Main).launch {
             for (colors in listaReto.value!!) {
                 delay(500)
-                listaBotones.get(colors-1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFFFFF")))
+                listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#FFFFFF"))
                 delay(1000)
                 when (colors){
-                    1-> listaBotones.get(colors-1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#00C853")))
-                    2-> listaBotones.get(colors-1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#D50000")))
-                    3-> listaBotones.get(colors-1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#0091EA")))
-                    4-> listaBotones.get(colors-1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFD600")))
+                    1-> listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#00C853"))
+                    2-> listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#D50000"))
+                    3-> listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#0091EA"))
+                    4-> listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#FFD600"))
                 }
             }
         }
@@ -63,12 +63,12 @@ class MyViewModel : ViewModel() {
     }
 
     fun compararSecuencia():Boolean{
-        if (listaReto.value == listaJugador.value) {
-            añadirValor()
+        return if (listaReto.value == listaJugador.value) {
+            sumarValor()
             listaJugador.value?.clear()
-            return true;
+            true
         } else {
-            return false;
+            false
         }
     }
 
