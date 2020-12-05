@@ -48,6 +48,7 @@ class MyViewModel : ViewModel() {
     fun mostrarSecuencia(listaBotones: List<Button>) {
         CoroutineScope(Dispatchers.Main).launch {
             for (colors in listaReto.value!!) {
+                delay(500)
                 listaBotones.get(colors-1).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFFFFF")))
                 delay(1000)
                 when (colors){
@@ -59,7 +60,16 @@ class MyViewModel : ViewModel() {
             }
         }
 
+    }
 
+    fun compararSecuencia():Boolean{
+        if (listaReto.value == listaJugador.value) {
+            añadirValor()
+            listaJugador.value?.clear()
+            return true;
+        } else {
+            return false;
+        }
     }
 
 

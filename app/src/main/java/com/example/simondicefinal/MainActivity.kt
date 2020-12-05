@@ -3,6 +3,7 @@ package com.example.simondicefinal
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 
@@ -24,6 +25,10 @@ class MainActivity : AppCompatActivity() {
 
         val listaBotones = listOf(green,red,blue,yellow)
 
+        val toastSaludo = Toast.makeText(applicationContext,"Comienza el juego!", Toast.LENGTH_SHORT)
+        val toastFin = Toast.makeText(applicationContext,"Has perdido :(", Toast.LENGTH_SHORT)
+
+
         miModelo.listaReto.observe(this, Observer{
             miModelo.mostrarSecuencia(listaBotones)
         })
@@ -31,10 +36,13 @@ class MainActivity : AppCompatActivity() {
         start.setOnClickListener{
             miModelo.resetear()
             miModelo.añadirValor()
+            toastSaludo.show()
+
         }
 
         check.setOnClickListener{
-
+            if (!miModelo.compararSecuencia())
+               toastFin.show()
         }
 
         green.setOnClickListener{
