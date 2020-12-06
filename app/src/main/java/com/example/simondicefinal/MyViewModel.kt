@@ -19,7 +19,7 @@ class MyViewModel : ViewModel() {
 
     var listaReto = MutableLiveData<MutableList<Int>>()
     val listaJugador = MutableLiveData<MutableList<Int>>()
-    var dificultad = MutableLiveData<String>("easy")
+    var dificultad = MutableLiveData("easy")
 
     init {
         listaReto.value = mutableListOf()

@@ -9,7 +9,7 @@
     <string name="infoText">Puntuacion: </string>
     <string name="Text">Puntuacion: </string>
     <string name="difficulty">Dificultad </string>
-    <string name="option"> </string>
+    <string name="option" />
     <string name="easy">Dificultad: Fácil</string>
     <string name="hard">Dificultad: Difícil</string>
     <string name="easy2">Fácil</string>
