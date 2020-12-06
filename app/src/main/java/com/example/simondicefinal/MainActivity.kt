@@ -1,6 +1,7 @@
 package com.example.simondicefinal
 
 
+import android.annotation.SuppressLint
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.Button
@@ -8,12 +9,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
      private lateinit var mediaPlayer:MediaPlayer
-
+    //Annoying warning showing up and no other way to fix it
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         val difficultybutton = findViewById<Button>(R.id.difficulty)
         val toastEasy = Toast.makeText(applicationContext, R.string.easy, Toast.LENGTH_SHORT)
         val toastHard = Toast.makeText(applicationContext, R.string.hard, Toast.LENGTH_SHORT)
-        var difficulty = findViewById<TextView>(R.id.difficultytext)
+        val difficulty = findViewById<TextView>(R.id.difficultytext)
 
         miModelo.listaReto.observe(this, {
             miModelo.mostrarSecuencia(listaBotones)
