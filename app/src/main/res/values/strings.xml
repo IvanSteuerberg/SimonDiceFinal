@@ -7,4 +7,10 @@
     <string name="finish">You lost D:</string>
     <string name="infoText">Score: </string>
     <string name="Text">Score: </string>
+    <string name="difficulty">Difficulty </string>
+    <string name="option"></string>
+    <string name="easy">Difficulty set to easy</string>
+    <string name="hard">Difficulty set to hard</string>
+    <string name="easy2">Easy</string>
+    <string name="hard2">Hard</string>
 </resources>

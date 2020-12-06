@@ -17,11 +17,11 @@
         android:textStyle="bold"
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.194"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
+        app:layout_constraintVertical_bias="0.751" />
 
     <TextView
         android:id="@+id/infoText"
@@ -36,6 +36,34 @@
         android:typeface="monospace"
         app:layout_constraintStart_toStartOf="@+id/yellow_button"
         app:layout_constraintTop_toBottomOf="@+id/yellow_button" />
+
+    <TextView
+        android:id="@+id/difficultytext"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/option"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintStart_toEndOf="@+id/infoText"
+        app:layout_constraintTop_toTopOf="@+id/infoText" />
+
+    <Button
+        android:id="@+id/difficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="512dp"
+        android:backgroundTint="#C51162"
+        android:text="@string/difficulty"
+        android:textColor="#FFEBEE"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/start_button"

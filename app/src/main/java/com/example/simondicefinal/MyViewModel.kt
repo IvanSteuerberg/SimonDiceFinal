@@ -19,10 +19,12 @@ class MyViewModel : ViewModel() {
 
     var listaReto = MutableLiveData<MutableList<Int>>()
     val listaJugador = MutableLiveData<MutableList<Int>>()
+    var dificultad = MutableLiveData<String>("easy")
 
     init {
         listaReto.value = mutableListOf()
         listaJugador.value = mutableListOf()
+
     }
 
     fun sumarValor() {
@@ -48,9 +50,16 @@ class MyViewModel : ViewModel() {
     fun mostrarSecuencia(listaBotones: List<Button>) {
         CoroutineScope(Dispatchers.Main).launch {
             for (colors in listaReto.value!!) {
-                delay(500)
+                if (dificultad.value == "easy"){
+                delay(350)
                 listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#FFFFFF"))
-                delay(1000)
+                delay(800)
+                }
+                else{
+                    delay(150)
+                    listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#FFFFFF"))
+                    delay(300)
+                }
                 when (colors){
                     1-> listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#00C853"))
                     2-> listaBotones[colors-1].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#D50000"))
@@ -69,6 +78,17 @@ class MyViewModel : ViewModel() {
             true
         } else {
             false
+        }
+    }
+
+    fun cambiarDificultad():Int{
+        return if (dificultad.value=="easy") {
+            dificultad.value = "hard"
+            1
+        }
+        else {
+            dificultad.value="easy"
+            2
         }
     }
 
